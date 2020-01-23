@@ -1,5 +1,26 @@
 <div class="event_container">
-<% @events.each do |event| %>
+  <h2>Upcoming Events</h2>
+  <br>
+</div>
+<div class="event_container">
+<% @upcoming_events.each do |event| %>
+<div class="event_card">
+  <% if event.date %>
+    <p class="date_event"> <%= event.date %> <p>
+  <% end %>
+  <h2> <%= event.location %> <h2>
+  <p class="date_event_created"> Posted <%= time_ago_in_words(event.created_at) %> ago</p>
+  <%= link_to 'view', event_path(event), class:"date_event"%>
+</div>
+<% end %>
+</div>
+
+<div class="event_container">
+  <h2>Previous Events</h2>
+  <br>
+</div>
+<div class="event_container">
+<% @previous_events.each do |event| %>
 <div class="event_card">
   <% if event.date %>
     <p class="date_event"> <%= event.date %> <p>
