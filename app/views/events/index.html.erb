@@ -1,9 +1,5 @@
 <div class="event_container">
-  <h1>Welcome, <%= @user.name %></h1>
-  <br>
-</div>
-<div class="event_container">
-<% @user.created_events.each do |event| %>
+<% @events.each do |event| %>
 <div class="event_card">
   <% if event.date %>
     <p class="date_event"> <%= event.date %> <p>

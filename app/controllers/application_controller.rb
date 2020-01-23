@@ -5,4 +5,9 @@ class ApplicationController < ActionController::Base
     cookies.permanent[:user_id] = user.id
     @currrent_user = user
   end
+
+  def log_out
+    cookies.delete(:user_id)
+    @currrent_user = nil
+  end
 end
