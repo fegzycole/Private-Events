@@ -1,0 +1,11 @@
+<header>
+  <h2>NewEvents</h2>
+  <ul>
+    <% if logged_in? %>
+      <li><%= link_to 'Profile', current_user %></li>
+    <% else %>
+      <li><%= link_to 'Login', login_path %></li>
+      <li><%= link_to 'Signup', new_user_path %></li>
+    <% end %>
+  </ul>
+</header>

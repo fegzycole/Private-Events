@@ -1,0 +1,19 @@
+header {
+  background: teal;
+  padding: 20px;
+  color: white;
+  margin-bottom: 200px;
+
+  display: flex;
+  justify-content: space-between;
+
+  ul {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      list-style-type: none;
+    }
+  }
+}

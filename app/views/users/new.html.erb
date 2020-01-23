@@ -1,0 +1,5 @@
+<%= form_with model: @user, class: "nifty_form" do |f| %>
+  <%= f.text_field :name %>
+  <%= f.email_field :email %>
+  <%= f.submit "Create User" %>
+<% end %>
