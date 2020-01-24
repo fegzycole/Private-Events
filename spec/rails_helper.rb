@@ -28,7 +28,10 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
 
   config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.clean_with(
+      :truncation,
+      except: %w(ar_internal_metadata)
+    )
   end
 
   config.before(:each) do
@@ -47,5 +50,12 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
+  end
+
+  Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
   end
 end
