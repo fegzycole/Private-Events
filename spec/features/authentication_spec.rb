@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
- 
+
 RSpec.feature 'Authentications', type: :feature do
   before :each do
     @user = User.create(name: 'User', email: 'user@mail.com')

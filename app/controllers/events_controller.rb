@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EventsController < ApplicationController
   def new
     @event = Event.new
@@ -9,7 +11,7 @@ class EventsController < ApplicationController
     if @event.save
       params[:event][:attendees].each do |attendee|
         unless attendee.blank?
-         @event.event_attendees.build(attendee_id: attendee.to_i)
+          @event.event_attendees.build(attendee_id: attendee.to_i)
         end
       end
       @event.save
@@ -29,7 +31,8 @@ class EventsController < ApplicationController
   end
 
   private
-    def event_params
-      params.require(:event).permit(:location, :date, :description)
-    end
+
+  def event_params
+    params.require(:event).permit(:location, :date, :description)
+  end
 end

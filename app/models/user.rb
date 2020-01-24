@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   has_many :created_events, foreign_key: :creator_id, class_name: 'Event'
   has_many :event_attendees, foreign_key: :attendee_id
@@ -11,15 +13,15 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
 
   def upcoming_events
-    self.attended_events.where("date >= ?", DateTime.now.to_date)
+    attended_events.where('date >= ?', DateTime.now.to_date)
   end
 
   def previous_events
-    self.attended_events.where("date < ?", DateTime.now.to_date)
+    attended_events.where('date < ?', DateTime.now.to_date)
   end
-  
-  def User.get_users(user)
-    scope :users_scope, -> { where("id != ?", user.id) }
+
+  def self.get_users(user)
+    scope :users_scope, -> { where('id != ?', user.id) }
     User.users_scope
   end
 end
