@@ -20,5 +20,4 @@ RSpec.describe Event, type: :model do
     }
     it { should allow_value("2020-01-10").for(:date)}
   end
-  
 end
