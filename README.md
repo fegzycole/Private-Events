@@ -3,7 +3,7 @@
 <br />
 <p align="center">
  
-  <h3 align="center">Forms</h3>
+  <h3 align="center">Associations</h3>
   <p align="center">
     Building forms on ruby on rails
     <br />
