@@ -20,7 +20,7 @@ RSpec.feature 'Events', type: :feature do
     fill_in 'event[location]', with: 'Taco bell'
     fill_in 'event[description]', with: 'Meeting to eat some tacos'
     fill_in 'event[date]', with: '2020/01/23'
-    find('#event_attendees').select("Otto")
+    find('#event_attendees').select('Otto')
     click_button 'Create event'
     expect(page).to have_content('Welcome, User')
     expect(page).to have_content('Upcoming Events')
@@ -48,7 +48,7 @@ RSpec.feature 'Events', type: :feature do
     fill_in 'event[location]', with: 'Taco bell'
     fill_in 'event[description]', with: 'Meeting to eat some tacos'
     fill_in 'event[date]', with: '2020-02-23'
-    find('#event_attendees').select("Otto")
+    find('#event_attendees').select('Otto')
     click_button 'Create event'
     expect(page).to have_content('Welcome, User')
     expect(page).to have_content('Upcoming Events')
@@ -57,5 +57,4 @@ RSpec.feature 'Events', type: :feature do
     click_on 'view'
     expect(page).to have_content('Taco bell')
   end
-
 end
