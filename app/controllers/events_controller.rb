@@ -3,7 +3,6 @@
 class EventsController < ApplicationController
   def new
     @event = Event.new
-    @all_users = User.get_users(current_user)
   end
 
   def create

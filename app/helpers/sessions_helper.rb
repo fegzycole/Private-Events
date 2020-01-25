@@ -12,4 +12,8 @@ module SessionsHelper
   def logged_in?
     !current_user.nil?
   end
+
+  def filter_users
+    User.get_users(current_user)
+  end
 end
