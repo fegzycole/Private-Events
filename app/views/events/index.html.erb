@@ -1,4 +1,8 @@
 <div class="event_container">
+  <h1>All Events</h1>
+  <br>
+</div>
+<div class="event_container">
   <h2>Upcoming Events</h2>
   <br>
 </div>
@@ -9,6 +13,7 @@
     <p class="date_event"> <%= event.date %> <p>
   <% end %>
   <h2> <%= event.location %> <h2>
+  <h3> <%= event.description %> <h3>
   <p class="date_event_created"> Posted <%= time_ago_in_words(event.created_at) %> ago</p>
   <%= link_to 'view', event_path(event), class:"date_event"%>
 </div>
@@ -26,6 +31,7 @@
     <p class="date_event"> <%= event.date %> <p>
   <% end %>
   <h2> <%= event.location %> <h2>
+  <h3> <%= event.description %> <h3>
   <p class="date_event_created"> Posted <%= time_ago_in_words(event.created_at) %> ago</p>
   <%= link_to 'view', event_path(event), class:"date_event"%>
 </div>

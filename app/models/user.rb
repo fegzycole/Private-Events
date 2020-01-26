@@ -20,6 +20,14 @@ class User < ApplicationRecord
     attended_events.where('date < ?', DateTime.now.to_date)
   end
 
+  def my_upcoming_events
+    created_events.where('date >= ?', DateTime.now.to_date)
+  end
+
+  def my_previous_events
+    created_events.where('date < ?', DateTime.now.to_date)
+  end
+
   def self.get_users(user)
     scope :users_scope, -> { where('id != ?', user.id) }
     User.users_scope

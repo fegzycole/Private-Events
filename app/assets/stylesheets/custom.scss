@@ -7,7 +7,7 @@
 .event_container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding-left: 25px;
   width: 85%;
   margin: auto;
@@ -16,6 +16,12 @@
 
 .event_card {
   width: 30%;
+  margin-left: 1.2%;
+  margin-right: 1.2%;
+  margin-top: 1.2%;
+  padding-left: 10px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .date_event {
