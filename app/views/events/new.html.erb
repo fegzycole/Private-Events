@@ -1,0 +1,19 @@
+<%= form_for @event do |f| %>
+  <div>
+    <% if @event.errors.any?%>
+      <% @event.errors.each do |error|%>
+        <p> <%= error %> </p>
+      <% end %>
+    <% end %>
+  </div>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+  <%= f.select(:attendees, filter_users.collect {|p| [ p.name, p.id ] }, 
+                                           {}, 
+                                           { :multiple => true, :size => 3 }) %>
+  <%= f.submit "Create event" %>
+<% end %>
